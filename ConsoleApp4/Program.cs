@@ -39,20 +39,20 @@ namespace ConsoleApp4
         }
         public static void CreateFile()
         {
-            string path = "C:\\Users\\" + Environment.UserName + "\\Desktop\\file.txt";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\file.txt";
             File.Create(path);
             Process.Start("notepad.exe", path);
         }
         public static void CreateFile2()
         {
-            string path = "C:\\Users\\" + Environment.UserName + "\\Desktop\\file.txt";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\file.txt";
             string text = Console.ReadLine();
             File.WriteAllText(path, text);
             Process.Start("notepad.exe", path);
         }
         public static void CreateFile3()
         {
-            string directory = "C:\\Users\\" + Environment.UserName + "\\Desktop\\folder1\\folder2";
+            string directory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\folder1\\folder2";
             Directory.CreateDirectory(directory);
             string path = directory + "\\text.txt";
             File.Create(path);
