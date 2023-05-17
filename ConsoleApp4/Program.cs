@@ -9,20 +9,33 @@ namespace ConsoleApp4
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            switch (Console.ReadLine())
+            string input = Console.ReadLine();
+            if (input == "1")
             {
-                case "1":
-                    CreateFile();
-                    break;
-                case "2":
-                    CreateFile2();
-                    break;
-                case "3":
-                    CreateFile3();
-                    break;
-                default:
-                    break;
+                CreateFile();
             }
+            else if ( input == "2")
+            {
+                CreateFile2();
+            }
+            else if (input == "3")
+            {
+                CreateFile3();
+            }
+            //switch (Console.ReadLine())
+            //{
+            //    case "1":
+            //        CreateFile();
+            //        break;
+            //    case "2":
+            //        CreateFile2();
+            //        break;
+            //    case "3":
+            //        CreateFile3();
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
         public static void CreateFile()
         {
