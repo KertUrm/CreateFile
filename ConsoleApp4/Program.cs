@@ -52,10 +52,23 @@ namespace ConsoleApp4
         }
         public static void CreateFile3()
         {
-            string directory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\folder1\\folder2";
-            Directory.CreateDirectory(directory);
-            string path = directory + "\\text.txt";
-            File.Create(path);
+            string path = "\\text.txt";
+            string fullpath = Path.GetFullPath(path);
+            if (File.Exists(fullpath))
+            {
+                if (File.ReadAllText(fullpath) == fullpath)
+                {
+                    Console.WriteLine("fail on");
+                }
+                else
+                {
+                    File.WriteAllText(fullpath, fullpath);
+                }
+            }
+            else
+            {
+                File.Create(fullpath);
+            }
             Process.Start("notepad.exe", path);
         }
     }
